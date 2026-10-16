@@ -1,0 +1,7 @@
+node_modules
+dist
+public/draco
+public/basis
+public/rhino3dm
+.playwright-mcp
+.claude/settings.local.json

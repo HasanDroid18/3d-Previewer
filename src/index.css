@@ -1,0 +1,69 @@
+@import 'tailwindcss';
+
+:root {
+  --paper: #ecebe8;
+  --paper-2: #f7f6f3;
+  --ink: #1b1b1f;
+  --muted: #6c6b70;
+  --line: rgb(27 27 31 / 0.1);
+  --accent: #b08442;
+  --danger: #a3261c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #111113;
+    --paper-2: #1c1c20;
+    --ink: #ececef;
+    --muted: #9b9aa2;
+    --line: rgb(255 255 255 / 0.09);
+    --accent: #d7ad6c;
+    --danger: #f0786d;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* A soft spotlight behind the model; the canvas itself is transparent */
+.stage {
+  background: radial-gradient(ellipse 70% 60% at 50% 45%, var(--paper-2), var(--paper));
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.4em;
+  padding: 0 0.3em;
+  border: 1px solid var(--line);
+  border-radius: 0.3em;
+  font: inherit;
+  font-size: 0.85em;
+  text-align: center;
+  color: var(--ink);
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button,
+select {
+  touch-action: manipulation; /* no double-tap page zoom on a fast second tap */
+  -webkit-tap-highlight-color: transparent;
+}
